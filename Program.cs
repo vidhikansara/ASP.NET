@@ -4,40 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DelegatesString
+namespace AreaDelegates
 {
-    public delegate string ConcateStrings(string str1,string str2);
-    public delegate void ReverseString(string str);
 
-    public class ApplyString
+    public delegate void calArea(double a,double b);
+    public delegate void calTriangle(double c, double d);
+
+    public class Area
     {
-        public static string strconcate(string s1,string s2)
+        public static void AreaRec(double n1, double n2)
         {
-            string con = String.Concat(s1, s2);
-            return con;
+            Console.WriteLine("Area of rectangle : " + (n1 * n2));
         }
 
-        public static void strreverse(string s)
+        public static void AreaTri(double n3,double n4)
         {
-            char[] charArray = s.ToCharArray();
-            Array.Reverse(charArray);
-            Console.WriteLine(new string(charArray));
+            Console.WriteLine("Area of Triangle : " + (n3*n4)/2);
         }
     }
+
     class Program
     {
+
+      
         static void Main(string[] args)
         {
-            string str1, str2;
-            Console.WriteLine("Enter first string : ");
-            str1 = Console.ReadLine();
-            Console.WriteLine("Enter second string : ");
-            str2 = Console.ReadLine();
+            double number1, number2;
+            Console.WriteLine("enter number 1:");
+            number1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("enter number 2:");
+            number2 = Convert.ToDouble(Console.ReadLine());
 
-            ConcateStrings con = new ConcateStrings(ApplyString.strconcate);
-            Console.WriteLine("Concate of strings : "+con(str1,str2));
-            ReverseString rev = new ReverseString(ApplyString.strreverse);
-            rev(str1);
+            calArea area = new calArea(Area.AreaRec);
+            area(number1,number2);
+
+            calTriangle tri = new calTriangle(Area.AreaTri);
+            tri(number1, number2);
+
             Console.ReadKey();
         }
     }
