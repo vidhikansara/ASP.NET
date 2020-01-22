@@ -1,0 +1,92 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Abstract_interfaceP4
+{
+
+    abstract class Car
+    {
+        protected int carno;
+        protected string carname;
+
+        public abstract void GetCarInfo();
+    }
+
+    interface Rate
+    {
+       
+       void GetKm();
+        void GetDays();
+
+    }
+
+    class Customer:Car,Rate
+    {
+        protected string custname;
+        protected int cno;
+        protected string cname;
+        protected double rate_km;
+        protected int rate_days;
+
+        public void getcustinfo()
+        {
+            Console.WriteLine("Enter customer name : ");
+            custname = Console.ReadLine();
+            
+        }
+        public override void GetCarInfo()
+        {
+            Console.WriteLine("Enter Car number: ");
+            cno = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Car name: ");
+            cname = Console.ReadLine();
+
+            
+        }
+
+        public void GetKm()
+        {
+            Console.WriteLine("enter kilometer : ");
+            rate_km = Convert.ToDouble(Console.ReadLine());
+            
+        }
+
+        public void GetDays()
+        {
+            Console.WriteLine("enter days : ");
+            rate_days = Convert.ToInt32(Console.ReadLine());
+            
+        }
+
+        public void show()
+        {
+            Console.WriteLine("customer name is : " + custname);
+            Console.WriteLine("Carnumber is " + cno + " and car name is " + cname);
+        }
+
+        public double calRate()
+        {
+            return rate_km * rate_days;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double Total;
+            Customer c = new Customer();
+            c.getcustinfo();
+            c.GetCarInfo();
+            c.GetKm();
+            c.GetDays();
+            c.show();
+            Total = c.calRate();
+            Console.WriteLine("Total amount is " + Total);
+            Console.ReadKey();
+
+        }
+    }
+}
