@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace threading
+{
+    class Program
+    {
+        public static void ChildThread1()
+        {
+            try
+            {
+                for(int i=65;i<122;i++)
+                {
+                    Thread.Sleep(2000);
+                    Console.WriteLine(Convert.ToChar(i));
+                }
+            }
+            catch(ThreadAbortException e)
+            {
+                Console.WriteLine("Thread Abort Exception");
+            }
+            finally
+            {
+                Console.WriteLine("Threads ");
+            }
+        }
+
+        public static void ChildThread2()
+        {
+            try
+            {
+                for (int i = 1; i <=20; i++)
+                {
+                    Thread.Sleep(1000);
+                    Console.WriteLine(i);
+                }
+            }
+            catch (ThreadAbortException e)
+            {
+                Console.WriteLine("Thread Abort Exception");
+            }
+            finally
+            {
+                Console.WriteLine("Threads ");
+            }
+        }
+        static void Main(string[] args)
+        {
+            ThreadStart childref1 = new ThreadStart(ChildThread1);
+            Thread childThread1 = new Thread(childref1);
+            childThread1.Start();
+
+            ThreadStart childref2 = new ThreadStart(ChildThread2);
+            Thread childThread2 = new Thread(childref2);
+            childThread2.Start();
+        }
+    }
+}
