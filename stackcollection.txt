@@ -1,0 +1,33 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StackCollection
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack Stack1 = new Stack();
+            Stack1.Push(1);
+            Stack1.Push(2);
+            Stack1.Push(3);
+            Stack1.Push(4);
+            Stack1.Push(5);
+
+            Console.WriteLine("Elements count stack are ");
+            Console.WriteLine(Stack1.Count);
+            Console.WriteLine("top in stack " + Stack1.Peek());
+            Console.WriteLine("Removed element " + Stack1.Pop());
+            foreach(Object obj in Stack1)
+            {
+                Console.WriteLine(obj);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
