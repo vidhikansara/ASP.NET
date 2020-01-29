@@ -1,0 +1,10 @@
+C:\Users\student\source\repos\window_form_first\window_form_first\bin\Debug\window_form_first.exe.config
+C:\Users\student\source\repos\window_form_first\window_form_first\bin\Debug\window_form_first.exe
+C:\Users\student\source\repos\window_form_first\window_form_first\bin\Debug\window_form_first.pdb
+C:\Users\student\source\repos\window_form_first\window_form_first\obj\Debug\window_form_first.csprojAssemblyReference.cache
+C:\Users\student\source\repos\window_form_first\window_form_first\obj\Debug\window_form_first.Form1.resources
+C:\Users\student\source\repos\window_form_first\window_form_first\obj\Debug\window_form_first.Properties.Resources.resources
+C:\Users\student\source\repos\window_form_first\window_form_first\obj\Debug\window_form_first.csproj.GenerateResource.cache
+C:\Users\student\source\repos\window_form_first\window_form_first\obj\Debug\window_form_first.csproj.CoreCompileInputs.cache
+C:\Users\student\source\repos\window_form_first\window_form_first\obj\Debug\window_form_first.exe
+C:\Users\student\source\repos\window_form_first\window_form_first\obj\Debug\window_form_first.pdb
